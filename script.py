@@ -25,9 +25,13 @@ def move_timer():
 
 def move_mouse(x, y):
     currentMouseX, currentMouseY = pyautogui.position()
+    
     #Moves mouse; Goes in opposite direction if near screen borders
     pyautogui.move(x * -1 if x + currentMouseX > screenWidth or x + currentMouseX < screenWidth else x, 
         y * -1 if y + currentMouseY > screenHeight or y + currentMouseY < screenHeight else y)
+    
+    #Hits F12 key
+    pyautogui.hotkey('F12')
 
 def main():
     try:
